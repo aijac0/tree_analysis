@@ -1,38 +1,16 @@
-import os
-import fnmatch
-from exploratory.data.edge_counts import init_edge_counts
-from exploratory.data.adjacent_counts import init_adjacent_counts
-from exploratory.data.path_counts import init_path_counts
-from exploratory.data.node_classes import init_node_classes
+from edge_counts import init_edge_counts
+from adjacent_counts import init_adjacent_counts
+from path_counts import init_path_counts
+from node_classes import init_node_classes
+from exploratory.tools.files import get_sources
 
-def get_sources(src_rootdir : str):
-
-    # Initialize list to return
-    filepaths = list()
-    
-    # Recursively search the rootpath directory
-    for dirpath, _, fpaths in os.walk(rootpath):
-        
-        # Iterate over each Fortran source filename
-        for fpath in fnmatch.filter(fpaths, "*.f*"):
-            
-            # Add the complete filepath to the list to return
-            filepath = os.path.join(dirpath, fpath)
-            filepaths.append(str(filepath))
-
-    return filepaths
-
-
-def get_trees(src_rootdir : str):
+def get_trees(filepaths : list[str]):
     """
     Get list of abstract syntax trees from Fortran source files under a root directory
     """
-
-    # Get source files
-    filepaths = initialize(src_rootdir)
     
     # Get list of abstract syntax trees parsed from each source file
-    trees = [get_abstract_syntax_tree(filepath) for filepath in filepaths]
+    #trees = [get_abstract_syntax_tree(filepath) for filepath in filepaths]
     
     return trees
 

@@ -1,6 +1,6 @@
 from abc import ABC, abstractproperty, abstractmethod
 from typing import Iterable, Hashable
-from specific.nodes import HashNode, ValueHashNode
+from basic.nodes import HashNode, ValueHashNode
 from collections import deque
 
 

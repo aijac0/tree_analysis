@@ -1,7 +1,7 @@
 from typing import Iterable
 from collections import deque
-from nodes import Node
-from parsers import Parser, StandardParser
+from exploratory.basic.nodes import Node
+from exploratory.basic.parsers import Parser, StandardParser
 
 class Tree(Node):
     
