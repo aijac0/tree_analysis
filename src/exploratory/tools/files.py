@@ -15,7 +15,8 @@ def get_files(rootdir : str, extension : str):
             
             # Continue if file extension is not desired
             curr_ext = os.path.splitext(fpath)[1]
-            if re.search("\.{}$".format(extension), curr_ext) is None: continue
+            if re.search("\.{}$".format(extension), curr_ext) is None: 
+                continue
             
             # Add the complete filepath to the list to return
             filepath = os.path.join(dirpath, fpath)
